@@ -1,6 +1,5 @@
 
-import { toBeInTheDocument } from '@testing-library/jest-dom';
-import { render, getByText } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Container from '../Container';
 
 test('renders Container without crashing', () => {
