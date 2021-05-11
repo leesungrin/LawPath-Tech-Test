@@ -7,7 +7,8 @@ This is the LawPath Tech Test, a project using **_Node Package Manager_** for lo
 Clone this repository:
 
 ```
-git clone git@github.com:leesungrin/LawPath-Tech-Test.git
+git clone https://github.com/leesungrin/LawPath-Tech-Test.git
+
 ```
 
 Install npm packages:
@@ -25,7 +26,7 @@ npm start
 Testing:
 
 ```
-npm test
+npm test a
 ```
 
 ### Project Structure

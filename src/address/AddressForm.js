@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import DoneIcon from "@material-ui/icons/Done";
 import { makeStyles } from "@material-ui/core/styles";
 import AddressField from "./AddressTextField";
+import AddressSelect from "./AddressSelect";
 
 const useStyles = makeStyles((theme) => ({
   buttonContainer: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     flex: 1,
+  },
+  formControl: {
+    width: "100%"
   },
 }));
 
@@ -63,7 +67,7 @@ const AddressForm = ({ setDone }) => {
     setIsLoading(true);
     setTouchedStateToTrue();
 
-    let url = `http://localhost:3000/postcode/search.json?q=${addressState.suburb}&state=${addressState.state}`;
+    let url = `/postcode/search.json?q=${addressState.suburb}&state=${addressState.state}`;
     let options = {
       method: "GET",
       headers: {
@@ -104,7 +108,6 @@ const AddressForm = ({ setDone }) => {
     } else {
       setIsSuccessful(false);
     }
-
     setIsLoading(false);
   };
 
@@ -137,7 +140,7 @@ const AddressForm = ({ setDone }) => {
         <Grid item xs={12} sm={4}>
           <AddressField
             name={"suburb"}
-            label={"Suburb 2"}
+            label={"Suburb"}
             value={addressState.suburb}
             isTouched={touchedState.suburb}
             handleChangeFunc={handleChange}
@@ -145,7 +148,7 @@ const AddressForm = ({ setDone }) => {
           />
         </Grid>
         <Grid item xs={12} sm={4}>
-          <AddressField
+          <AddressSelect
             name={"state"}
             label={"State"}
             value={addressState.state}
