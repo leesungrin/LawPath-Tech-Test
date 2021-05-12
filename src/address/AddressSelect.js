@@ -18,7 +18,7 @@ const AddressSelect = ({ name, label, value, isTouched, handleChangeFunc, isRequ
             value={value}
             onChange={handleChangeFunc}
         >
-          {Object.keys(StateEnum).map(state => <MenuItem value={StateEnum[state]}>{StateEnum[state]}</MenuItem>)}
+          {Object.keys(StateEnum).map(state => <MenuItem value={StateEnum[state]} key={StateEnum[state]} >{StateEnum[state]}</MenuItem>)}
         </Select>
         <FormHelperText>{error ? "Required" : ""}</FormHelperText>
       </FormControl>

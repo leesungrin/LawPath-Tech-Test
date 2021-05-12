@@ -96,7 +96,7 @@ const AddressForm = ({ setDone }) => {
               },
             ];
         const result = addresses.filter(
-          (e) => e.postcode === Number(addressState.postcode)
+          (e) => (e.postcode + "") === addressState.postcode
         );
         if (result.length > 0) {
           setIsSuccessful(true);
@@ -124,7 +124,7 @@ const AddressForm = ({ setDone }) => {
             value={addressState.address1}
             isTouched={touchedState.address1}
             handleChangeFunc={handleChange}
-            isRequired={true}
+            isRequired={false}
           />
         </Grid>
         <Grid item xs={12}>
